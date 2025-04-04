@@ -1,0 +1,311 @@
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1600px; /* Ajustado para 4K */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.text-container {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: clamp(80px, 5vw, 150px); /* Escala entre 80px y 150px según el viewport */
+  height: clamp(80px, 5vw, 150px);
+}
+
+/* Navigation */
+.navigation {
+  width: 100%;
+  background-color: #333;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  max-width: 1600px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item {
+  margin: 0 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.5rem); /* Escala entre 1rem y 1.5rem */
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+/* Media Queries para pantallas 4K */
+@media (min-width: 2560px) {
+  .header {
+      padding: 1.5rem 3rem;
+  }
+
+  .text-container h1 {
+      font-size: clamp(2rem, 3vw, 3rem); /* Escala hasta 3rem en 4K */
+  }
+
+  .text-container p {
+      font-size: clamp(1rem, 1.5vw, 1.5rem); /* Escala hasta 1.5rem */
+  }
+
+  .navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+
+  .nav-list {
+      padding: 1.5rem 3rem;
+  }
+
+  .nav-item {
+      margin: 0 2rem;
+  }
+
+  .hamburger {
+      display: none;
+  }
+}
+
+/* Media Queries para tablets y móviles */
+@media (max-width: 1024px) {
+  .header {
+      flex-direction: column;
+      padding: 0.5rem 1rem;
+  }
+
+  .logo-container {
+      margin-bottom: 1rem;
+  }
+
+  .text-container {
+      width: 100%;
+  }
+
+  .text-container h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem); /* Ajuste para tablets */
+  }
+
+  .text-container p {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  .nav-list {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 1rem 0;
+  }
+
+  .nav-list.open {
+      display: flex;
+  }
+
+  .nav-item {
+      margin: 0.5rem 0;
+      text-align: center;
+  }
+
+  .hamburger {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1rem;
+      width: 60px;
+      height: 60px;
+  }
+
+  .hamburger-line {
+      display: block;
+      width: clamp(25px, 5vw, 30px); /* Escala el tamaño de las líneas */
+      height: 3px;
+      background-color: white;
+      margin: 5px auto;
+      transition: all 0.3s ease;
+  }
+
+  .nav-list.open + .hamburger .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-list.open + .hamburger .hamburger-line:nth-child(2) {
+      opacity: 0;
+  }
+
+  .nav-list.open + .hamburger .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .logo {
+      width: clamp(60px, 15vw, 80px); /* Más pequeño en móviles */
+      height: clamp(60px, 15vw, 80px);
+  }
+
+  .text-container h1 {
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .text-container p {
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+
+  .nav-link {
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      padding: 0.5rem;
+  }
+
+  .hamburger {
+      width: 50px;
+      height: 50px;
+  }
+}
+.container {
+  padding: 2rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.imageScrollContainer {
+  display: flex;
+  gap: 2rem; /* Espacio entre imágenes */
+  overflow-x: auto; /* Scroll horizontal */
+  padding-bottom: 1rem; /* Espacio para el scroll */
+  scrollbar-width: thin; /* Para navegadores modernos */
+}
+
+.imageScrollContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.imageScrollContainer::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.imageWrapper {
+  flex: 0 0 auto; /* Evita que las imágenes se estiren */
+}
+
+.image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Estilos para el contenedor de imágenes */
+.images-container {
+  padding: 2rem;
+  max-width: 100%;
+}
+
+.images-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.images-scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f5f5f5;
+}
+
+/* Estilos para la barra de scroll en navegadores WebKit */
+.images-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.images-scroll-container::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.images-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.image-wrapper {
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.scroll-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+}
+
+.scroll-image:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.images-container {
+  padding: 2rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.images-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.images-scroll-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: hidden; /* Cambiamos a hidden para el scroll automático */
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.image-wrapper {
+  flex: 0 0 auto;
+}
+
+.scroll-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
