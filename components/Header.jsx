@@ -1,11 +1,18 @@
 import Link from 'next/link';
+import Image from "next/image";
 
-export default function header() {
+
+export default function Header() {
     return (
         <header>
-            <img src="/img/isotipo.svg" alt="Logo de Neuro Game"/>
+            <Image
+                className="logo"
+                src="/img/isotipo.svg"
+                alt="Logo NeuroGame"
+                width={100}
+                height={100}/>
             <h1>Neuro Game</h1>
-            <i><p>- Videojuego de Rehabilitacion -</p></i>
+            <i><p>- Rehabilita tus Habilidades -</p></i>
         </header>
     );
 }
