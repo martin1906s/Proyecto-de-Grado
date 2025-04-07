@@ -1,0 +1,421 @@
+/* ESTILOS BASE (MOBILE FIRST) */
+.download-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.downloads-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.download-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.download-logo {
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+}
+
+.info-container {
+    width: 100%;
+}
+
+.file-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 15px;
+}
+
+.btn-download {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #2563eb;
+}
+
+/* ESTILOS PARA TARJETAS ESPECÍFICAS */
+.apk-card {
+    background-color: rgba(124, 1, 240, 0.979);
+    border-color: rgba(147, 51, 234, 0.3);
+}
+
+.apk-card .btn-download {
+    background-color: #9333ea;
+}
+
+.apk-card .btn-download:hover {
+    background-color: #7e22ce;
+}
+
+.exe-card {
+    background-color: rgba(169, 236, 52, 0.863);
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+.exe-card .btn-download {
+    background-color: #3f8b0c;
+    color: #1a2e05;
+}
+
+.exe-card .btn-download:hover {
+    background-color: #84cc16;
+}
+
+/* ESTILOS DEL CARRUSEL */
+.images-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 2rem 0;
+    padding: 0 10px;
+}
+
+.images-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Indicadores de posición (puntos) */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-indicator.active {
+    background: #3b82f6;
+}
+
+/* Flechas de navegación */
+.carousel-arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.carousel-arrow.left {
+    left: 15px;
+}
+
+.carousel-arrow.right {
+    right: 15px;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ESTILOS DEL MODAL */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
+    color: #f87171;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* MEDIA QUERIES RESPONSIVE */
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+    .download-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .card-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .btn-download {
+        width: auto;
+        min-width: 150px;
+    }
+
+    /* Carrusel en tablet */
+    .carousel-item {
+        flex: 0 0 50%;
+        min-width: 50%;
+    }
+
+    .carousel-arrow {
+        display: block;
+    }
+
+    /* Modal en tablet */
+    .modal-close {
+        top: -50px;
+        right: -20px;
+        font-size: 3rem;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .download-card {
+        padding: 30px;
+    }
+    
+    .download-logo {
+        max-width: 150px;
+    }
+    
+    .file-name {
+        text-align: left;
+        font-size: 1.4rem;
+    }
+
+    /* Carrusel en desktop */
+    .carousel-item {
+        flex: 0 0 33.333%;
+        min-width: 33.333%;
+    }
+
+    .carousel-arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Modal en desktop */
+    .modal-content {
+        max-width: 80%;
+    }
+}
+
+/* 4K (2560px+) */
+@media (min-width: 2560px) {
+    .download-section {
+        max-width: 2000px;
+    }
+    
+    .download-card {
+        padding: 40px;
+    }
+    
+    .download-logo {
+        max-width: 200px;
+    }
+    
+    .file-name {
+        font-size: 1.6rem;
+    }
+    
+    .btn-download {
+        padding: 16px 32px;
+        font-size: 1.1rem;
+    }
+
+    /* Carrusel en 4K */
+    .carousel-item {
+        flex: 0 0 25%;
+        min-width: 25%;
+    }
+
+    .carousel-arrow {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    /* Modal en 4K */
+    .modal-content {
+        max-width: 70%;
+    }
+    
+    .modal-close {
+        font-size: 3.5rem;
+    }
+}
+
+/* ESTILOS PARA LA PÁGINA PRINCIPAL */
+.page {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.main p {
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
