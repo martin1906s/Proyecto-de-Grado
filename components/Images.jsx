@@ -1,6 +1,7 @@
 "use client"
 import { useState, useRef } from "react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const imagenes = [
     { src: "/img/isotipo.svg", alt: "Imagen 1" },
