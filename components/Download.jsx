@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Descargas = [
     { Logo:"/img/isotipo.svg",Nombre:"NeuroGame.apk",Version:"1.0.0",Tipo:"Android",Fecha:"04/04/2025" },
-    { Logo:"/img/isotipo.svg",Nombre:"NeuroGame.exe",Version:"1.0.0",Tipo:"Microsoft",Fecha:"04/04/2025" },
+    { Logo:"/img/isotipo.svg",Nombre:"NeuroGame.exe",Version:"1.0.0",Tipo:"Windows",Fecha:"04/04/2025" },
 ];
 
 export default function Download() {
