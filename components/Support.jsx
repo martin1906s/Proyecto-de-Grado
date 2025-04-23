@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Support() {
@@ -15,7 +14,7 @@ export default function Support() {
         if (!message.trim() || !selectedMethod) return;
 
         if (selectedMethod === 'gmail') {
-            const subject = "Soporte NeuroGame";
+            const subject = 'Soporte NeuroGame';
             const body = `Hola NeuroGame\n\nNecesito Soporte\n\n${message}`;
             const mailtoLink = `mailto:martin.simbana007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
@@ -36,12 +35,7 @@ export default function Support() {
     return (
         <section className="support">
             <div className="support-container">
-                <h2 className="support-title">Soporte</h2>
-
-                <nav className="support-links">
-                    <Link href="/support/faq" className="support-link">FAQ</Link>
-                    <Link href="/support/contact" className="support-link">Contacto</Link>
-                </nav>
+                <h2 className="support-title">Soporte NeuroGame</h2>
 
                 <form onSubmit={handleSubmit} className="support-form">
                     <textarea
@@ -50,13 +44,13 @@ export default function Support() {
                         placeholder="Escribe aquí tu problema o consulta..."
                         className="input-message"
                         rows={5}
-                        required
+                        required = {true}
                     />
 
                     <div className="method-selection">
-                        <h3>Selecciona método de envío:</h3>
+                        <h3 style={{color: "white"}}>Selecciona método de envío:</h3>
                         <div className="method-options">
-                            <label className={`method-option ${selectedMethod === 'gmail' ? 'selected' : ''}`}>
+                            <label className={`method-option ${selectedMethod === 'gmail' ? 'selected' : ''}`} style={{backgroundColor: "red"}}>
                                 <input
                                     type="radio"
                                     name="method"
@@ -67,7 +61,7 @@ export default function Support() {
                                 <span>Enviar por Gmail</span>
                             </label>
 
-                            <label className={`method-option ${selectedMethod === 'whatsapp' ? 'selected' : ''}`}>
+                            <label className={`method-option ${selectedMethod === 'whatsapp' ? 'selected' : ''}`} style={{backgroundColor: "greenyellow"}}>
                                 <input
                                     type="radio"
                                     name="method"
@@ -90,7 +84,7 @@ export default function Support() {
 
                     {isSubmitted && (
                         <div className="confirmation-message">
-                            {selectedMethod === 'gmail' ? "Redirigiendo a Gmail..." : "Abriendo WhatsApp..."}
+                            {selectedMethod === 'gmail' ? 'Redirigiendo a Gmail...' : 'Abriendo WhatsApp...'}
                         </div>
                     )}
                 </form>
