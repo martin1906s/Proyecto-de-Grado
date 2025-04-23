@@ -2,21 +2,31 @@
 import Image from "next/image";
 
 const Descargas = [
-    { Logo:"/img/isotipo.svg",Nombre:"NeuroGame.apk",Version:"1.0.0",Tipo:"Android",Fecha:"04/04/2025" },
-    { Logo:"/img/isotipo.svg",Nombre:"NeuroGame.exe",Version:"1.0.0",Tipo:"Windows",Fecha:"04/04/2025" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025" },
 ];
 
 export default function Download() {
     return (
         <div className="download-section">
             <h2>Descargas</h2>
+            <h3>Requisitos</h3>
+            <p>Para descargar la aplicación, asegúrate de cumplir con los siguientes requisitos:</p>
+            <ul className="requirements-list">
+                <a href="https://www.microsoft.com/es-es/software-download" target="_blank"><b><li>Windows (64 bits)</li></b></a>
+                <a href="https://www.python.org/downloads/" target="_blank"><b><li>Python 3.8 o superior</li></b></a>
+                <a href="https://github.com/martin1906s/NeuroGame#instalaci%C3%B3n" target="_blank"><b><li>Instalar las dependencias necesarias</li></b></a>
+                <b><li>Conexión a Internet</li></b>
+                <b><li>Cámara</li></b>
+                <li>4GB RAM</li>
+                <li>5GB de espacio en disco</li>
+            </ul>
             <div className="downloads-container">
                 {Descargas.map((descarga, index) => {
                     // Determinar la clase CSS basado en la extensión del archivo
-                    const fileTypeClass = descarga.Nombre.endsWith('.apk') 
-                        ? 'apk-card' 
+                    const fileTypeClass = descarga.Nombre.endsWith('.apk')
+                        ? 'apk-card'
                         : 'exe-card';
-                    
+
                     return (
                         <div key={index} className={`download-card ${fileTypeClass}`}>
                             <div className="card-content">
@@ -33,12 +43,14 @@ export default function Download() {
                                     <p className="file-name">{descarga.Nombre}</p>
                                     <div className="details-grid">
                                         <span>Versión:</span><span>{descarga.Version}</span>
-                                        <span>Tipo:</span><span>{descarga.Tipo}</span>
+                                        <span>Dispositivo:</span><span>{descarga.Dispositivo}</span>
                                         <span>Fecha:</span><span>{descarga.Fecha}</span>
                                     </div>
                                 </div>
                             </div>
-                            <button className="btn-download">Descargar</button>
+                            <a href="/downloads/NeuroGame.rar" download className="btn-download">
+                                <button className="btn-download">Descargar</button>
+                            </a>
                         </div>
                     );
                 })}

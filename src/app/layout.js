@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Navigation from "../../components/Navigation";
 import About from "../../components/About";
 import Footer from "../../components/Footer";
+import Support from "../../components/Support";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,6 +48,7 @@ export default function RootLayout({children}){
         <Navigation />
         {children}
         <About />
+        <Support />
         <Footer />
       </body>
 
