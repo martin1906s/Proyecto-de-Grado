@@ -43,7 +43,7 @@ export default function RootLayout({children}){
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`} style={{backgroundColor: "#dfe6e8"}}>
         <Header />
         <Navigation />
         {children}

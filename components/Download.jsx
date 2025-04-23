@@ -8,7 +8,6 @@ const Descargas = [
 export default function Download() {
     return (
         <div className="download-section">
-            <h2>Descargas</h2>
             <h3>Requisitos</h3>
             <p>Para descargar la aplicación, asegúrate de cumplir con los siguientes requisitos:</p>
             <ul className="requirements-list">
@@ -20,6 +19,7 @@ export default function Download() {
                 <li>4GB RAM</li>
                 <li>5GB de espacio en disco</li>
             </ul>
+            <h2>Descargas</h2>
             <div className="downloads-container">
                 {Descargas.map((descarga, index) => {
                     // Determinar la clase CSS basado en la extensión del archivo
