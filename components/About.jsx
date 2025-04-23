@@ -1,4 +1,3 @@
-import Support from "./Support";
 export default function About() {
     return (
         <div className="about">
@@ -13,7 +12,6 @@ export default function About() {
         <h4>Pasaco Damessis</h4>
         <h4>Espin Sebastián</h4>
         <a href="https://martinsimbana.vercel.app/">Simbaña Martín</a>       
-        <Support/>
         </div>
     );
     }

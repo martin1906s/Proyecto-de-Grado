@@ -122,7 +122,7 @@ export default function Images() {
     const realIndex = ((currentIndex % imagenes.length) + imagenes.length) % imagenes.length;
 
     return (
-        <div className="images-container">
+        <div className="images-container" id="#images">
             <h2>Imágenes</h2>
             <div
                 className="carousel-wrapper"

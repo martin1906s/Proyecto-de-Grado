@@ -12,11 +12,11 @@ export default function Download() {
             <h3>Requisitos</h3>
             <p>Para descargar la aplicación, asegúrate de cumplir con los siguientes requisitos:</p>
             <ul className="requirements-list">
+                <a href="https://www.microsoft.com/es-es/software-download" target="_blank"><b><li>Windows (64 bits)</li></b></a>
+                <a href="https://www.python.org/downloads/" target="_blank"><b><li>Python 3.8 o superior</li></b></a>
+                <a href="https://github.com/martin1906s/NeuroGame#instalaci%C3%B3n" target="_blank"><b><li>Instalar las dependencias necesarias</li></b></a>
                 <b><li>Conexión a Internet</li></b>
-                <b><li>Python 3.8 o superior</li></b>
-                <b><li>Instalar los modulos necesarios</li></b>
                 <b><li>Cámara</li></b>
-                <b><li>Windows (64 bits)</li></b>
                 <li>4GB RAM</li>
                 <li>5GB de espacio en disco</li>
             </ul>
@@ -48,7 +48,9 @@ export default function Download() {
                                     </div>
                                 </div>
                             </div>
-                            <button className="btn-download">Descargar</button>
+                            <a href="/downloads/NeuroGame.rar" download className="btn-download">
+                                <button className="btn-download">Descargar</button>
+                            </a>
                         </div>
                     );
                 })}
