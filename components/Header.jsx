@@ -13,7 +13,7 @@ export default function Header() {
                 />
             </div>
             <div className="text-container">
-                <h1>Neuro Game</h1>
+                <h1>NeuroGame</h1>
                 <i><p>- Rehabilita tus Habilidades -</p></i>
             </div>
         </header>

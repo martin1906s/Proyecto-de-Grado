@@ -33,6 +33,7 @@ export default function Footer() {
             <div className="footer-content">
                 <nav className="footer-nav">
                     <FooterLink href="/terms" text="Términos y Condiciones" />
+                    <br />
                     <FooterLink href="/privacy" text="Política de Privacidad" />
                 </nav>
                 <p className="footer-copyright">
