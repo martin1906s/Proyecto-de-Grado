@@ -553,7 +553,7 @@
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    width: 100%;
+    width: 90%;
     transition: background-color 0.3s;
 }
 
@@ -805,62 +805,30 @@
     }
 }
 
-/* MEDIA QUERIES RESPONSIVE */
-/* Tablet (768px+) */
-@media (min-width: 768px) {
-    .header {
-        padding: 1.5rem 1rem;
-    }
-
-    .download-card {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .card-content {
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .btn-download {
-        width: auto;
-        min-width: 150px;
-    }
-
-    .carousel-item {
-        flex: 0 0 50%;
-        min-width: 50%;
-    }
-
-    .carousel-arrow {
-        display: block;
-    }
-
-    .modal-close {
-        top: -50px;
-        right: -20px;
-        font-size: 3rem;
-    }
-}
-
-/* Media Queries para Header y Support */
+/* Teléfonos (hasta 768px) */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
     }
 
     .logo-container {
         margin-right: 0;
         margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
     }
 
     .text-container h1 {
         font-size: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .text-container p {
         font-size: 1rem;
+        line-height: 1.5;
     }
 
     .support-container {
@@ -869,34 +837,79 @@
 
     .support-title {
         font-size: 2rem;
+        text-align: center;
     }
 
     .support-links {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
     }
 
     .method-options {
         flex-direction: column;
         gap: 1rem;
     }
+
+    .btn-download {
+        width: 90%;
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
 }
 
+/* Teléfonos pequeños (hasta 480px) */
 @media (max-width: 480px) {
     .text-container h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .logo {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .support-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .btn-send {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+    .btn-download {
         padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 260px;
+        height: auto;
+    }
+    .card-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 2rem;
+    }
+}
+@media (max-width: 380px) {
+    .btn-download {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 160px;
+        height: auto;
+    }
+    .btn-send {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }

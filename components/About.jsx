@@ -9,7 +9,7 @@ export default function About() {
         <p>
         NeuroGame fue realizado gracias a la colaboración de:
         </p>
-        <a href="https://martinsimbana.vercel.app/">Simbaña Martín</a>  - Creador del videojuego y página web.     
+        <p><a href="https://martinsimbana.vercel.app/">Simbaña Martín</a>  - Creador del videojuego y página web. </p> 
         <p><b>Pasaco Damessis</b> - Líder del Proyecto</p>
         <p><b>Espín Sebastian</b> -  Creador de la idea del videojuego</p>
         </div>
