@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 const Descargas = [
-    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar' },
 ];
 
 export default function Download() {
@@ -48,7 +48,7 @@ export default function Download() {
                                     </div>
                                 </div>
                             </div>
-                            <a href="/downloads/NeuroGame.rar" download className="btn-download">
+                            <a href={descarga.Enlace} download className="btn-download">
                                 <button className="btn-download">Descargar</button>
                             </a>
                         </div>
