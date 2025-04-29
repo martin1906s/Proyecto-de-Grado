@@ -3,11 +3,17 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const imagenes = [
-    { src: "/img/gmail.svg", alt: "Imagen 1" },
-    { src: "/img/isotipo.svg", alt: "Imagen 2" },
-    { src: "/img/whatsapp.svg", alt: "Imagen 3" },
-    { src: "/img/isotipo.svg", alt: "Imagen 4" },
-    { src: "/img/isotipo.svg", alt: "Imagen 5" },
+    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
+
 ];
 
 export default function Images() {
@@ -22,7 +28,7 @@ export default function Images() {
     const transitionTimeout = useRef(null);
 
     // Clonamos las imágenes al principio y al final para efecto infinito
-    const clonedImages = [...imagenes, ...imagenes, ...imagenes];
+    const clonedImages = [...imagenes, ...imagenes];
 
     // Manejar el fin de la transición
     useEffect(() => {
@@ -134,7 +140,7 @@ export default function Images() {
                 <div
                     className="carousel"
                     style={{
-                        transform: `translateX(-${currentIndex * (100 / imagenes.length)}%)`,
+                        transform: `translateX(-${currentIndex * ((100 * imagenes.length) / imagenes.length)}%)`,
                         transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
                     }}
                 >
@@ -142,7 +148,7 @@ export default function Images() {
                         <div
                             key={`${imagen.alt}-${index}`}
                             className="carousel-item"
-                            style={{ width: `${100 / imagenes.length}%`, padding: '0 5px' }} 
+                            style={{ width: `${100 / clonedImages.length}%`, padding: '0 5px' }}
                             onClick={() => openModal(imagenes[index % imagenes.length])}
                         >
                             <Image
