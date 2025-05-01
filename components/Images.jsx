@@ -221,6 +221,7 @@ export default function Images() {
                                     allow="autoplay"
                                     allowFullScreen
                                     style={{ border: "none" }}
+                                    className="modal-image"
                                 ></iframe>
                             ) : (
                                 <Image
