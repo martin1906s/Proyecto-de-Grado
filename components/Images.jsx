@@ -3,17 +3,14 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const imagenes = [
+    {
+        type: "video",
+        thumbnail: "/img/publicity/miniaturavideo.png",
+        alt: "Video promocional",
+        videoUrl: "https://drive.google.com/file/d/14i4ezKpI3J2OJN3plD2c9rMMy6UVUlnS/preview"
+    },
     { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego1.webp", alt: "Imagen 1" },
-    { src: "/img/publicity/juego2.webp", alt: "Imagen 1" },
-
+    { src: "/img/publicity/juego2.webp", alt: "Imagen 2" },
 ];
 
 export default function Images() {
@@ -144,23 +141,35 @@ export default function Images() {
                         transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
                     }}
                 >
-                    {clonedImages.map((imagen, index) => (
-                        <div
-                            key={`${imagen.alt}-${index}`}
-                            className="carousel-item"
-                            style={{ width: `${100 / clonedImages.length}%`, padding: '0 5px' }}
-                            onClick={() => openModal(imagenes[index % imagenes.length])}
-                        >
-                            <Image
-                                src={imagen.src}
-                                alt={imagen.alt}
-                                width={200}
-                                height={200}
-                                className="carousel-image"
-                                priority={index === currentIndex + imagenes.length}
-                            />
-                        </div>
-                    ))}
+                    {clonedImages.map((imagen, index) => {
+                        const realImage = imagenes[index % imagenes.length];
+                        return (
+                            <div
+                                key={`${imagen.alt || 'video'}-${index}`}
+                                className="carousel-item"
+                                style={{ width: `${100 / clonedImages.length}%`, padding: '0 5px' }}
+                                onClick={() => openModal(realImage)}
+                            >
+                                {realImage.type === "video" ? (
+                                    <img
+                                        src={realImage.thumbnail}
+                                        alt={realImage.alt}
+                                        style={{ width: '200px', height: '200px', objectFit: 'cover', cursor: 'pointer' }}
+                                    />
+                                ) : (
+                                    <Image
+                                        src={imagen.src}
+                                        alt={imagen.alt}
+                                        width={200}
+                                        height={200}
+                                        className="carousel-image"
+                                        priority={index === currentIndex + imagenes.length}
+                                    />
+                                )}
+                            </div>
+                        );
+                    })}
+
                 </div>
 
                 {/* Flechas de navegación */}
@@ -194,10 +203,7 @@ export default function Images() {
 
             {/* Modal */}
             {modalOpen && (
-                <div
-                    className="modal-overlay"
-                    onClick={handleClickOutside}
-                >
+                <div className="modal-overlay" onClick={handleClickOutside}>
                     <div className="modal-content" ref={modalRef}>
                         <button
                             className="modal-close"
@@ -207,17 +213,29 @@ export default function Images() {
                             &times;
                         </button>
                         <div className="modal-image-container">
-                            <Image
-                                src={selectedImage.src}
-                                alt={selectedImage.alt}
-                                width={800}
-                                height={600}
-                                className="modal-image"
-                            />
+                            {selectedImage?.type === "video" ? (
+                                <iframe
+                                    src={selectedImage.videoUrl}
+                                    width="800"
+                                    height="600"
+                                    allow="autoplay"
+                                    allowFullScreen
+                                    style={{ border: "none" }}
+                                ></iframe>
+                            ) : (
+                                <Image
+                                    src={selectedImage.src}
+                                    alt={selectedImage.alt}
+                                    width={800}
+                                    height={600}
+                                    className="modal-image"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
             )}
+
 
             <style jsx>{`
                 .carousel-item {
