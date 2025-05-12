@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 const Descargas = [
-    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar' },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar', Tamaño: "292MB" },
 ];
 
 export default function Download() {
@@ -12,9 +12,9 @@ export default function Download() {
             <p>Para descargar la aplicación, asegúrate de cumplir con los siguientes requisitos:</p>
             <ul className="requirements-list">
                 <a href="https://www.microsoft.com/es-es/software-download" target="_blank"><b><li>Windows (64 bits)</li></b></a>
-                <a href="https://www.python.org/downloads/" target="_blank"><b><li>Python 3.8 o superior</li></b></a>
-                <a href="https://github.com/martin1906s/NeuroGame#instalaci%C3%B3n" target="_blank"><b><li>Instalar las dependencias necesarias</li></b></a>
-                <b><li>Conexión a Internet</li></b>
+                <a href="https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe" target="_blank"><b><li>Python 3.7 - 3.10</li></b></a>
+                <b><li>Instalar las dependencias necesarias</li></b>
+                <b><li>Conexión a Internet (Solo al instalar las dependencias)</li></b>
                 <b><li>Cámara</li></b>
                 <li>4GB RAM</li>
                 <li>5GB de espacio en disco</li>
@@ -45,6 +45,7 @@ export default function Download() {
                                         <span>Versión:</span><span>{descarga.Version}</span>
                                         <span>Dispositivo:</span><span>{descarga.Dispositivo}</span>
                                         <span>Fecha:</span><span>{descarga.Fecha}</span>
+                                        <span>Tamaño:</span><span>{descarga.Tamaño}</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,12 +1,11 @@
-import styles from "./page.module.css";
 import Images from "../../components/Images";
 import Download from "../../components/Download";
 
 export default function Main() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+    <div>
+      <main>
+        <h1>
           <b>NeuroGame</b>
         </h1>
         <p>
