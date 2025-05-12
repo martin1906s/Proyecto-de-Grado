@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import Images from "../../components/Images";
 import Download from "../../components/Download";
 
