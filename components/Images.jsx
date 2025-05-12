@@ -236,24 +236,6 @@ export default function Images() {
                     </div>
                 </div>
             )}
-
-
-            <style jsx>{`
-                .carousel-item {
-                    padding: 0 5px; /* Reduje el padding horizontal */
-                }
-                
-                .carousel-image {
-                    margin: 0 auto;
-                    max-width: 90%; /* Ajusté el ancho máximo */
-                }
-                
-                @media (min-width: 768px) {
-                    .carousel-item {
-                        padding: 0 8px; /* Ajuste para tablet */
-                    }
-                }
-            `}</style>
         </div>
     );
 }

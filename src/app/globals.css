@@ -4,7 +4,9 @@
     max-width: 1400px;
     margin: 0 auto;
 }
-
+p {
+    text-align: justify;
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -546,15 +548,16 @@
 }
 
 .btn-download {
+    display: flex;
+    justify-content: center;
     background-color: #3b82f6;
-    color: white;
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    width: 90%;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .btn-download:hover {
@@ -911,4 +914,93 @@
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
+}
+
+/* INTEGRANTES */
+.colaboradores {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 10px;
+}
+
+.integrante {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    background-color: #7e22ce;
+    border-radius: 3rem;
+    padding: 1rem;
+}
+
+.integrante-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 4 10px 20px rgb(81, 255, 12);
+}
+.integrante-button {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background-color: #48ff00;
+    width: 6rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .integrante {
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .integrante-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .integrante p {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .colaboradores {
+        gap: 1.5rem;
+        padding: 0 5px;
+    }
+    
+    .integrante {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .integrante-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .integrante h3 {
+        font-size: 1rem;
+    }
+    
+    .integrante p {
+        font-size: 0.9rem;
+    }
+    
+    .integrante a {
+        font-size: 0.8rem;
+    }
+}
+.footer-copyright {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #6b7280;
 }
