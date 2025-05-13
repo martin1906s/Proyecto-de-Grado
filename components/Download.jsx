@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 const Descargas = [
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.1", Dispositivo: "Windows", Fecha: "13/05/2025", Enlace: '/downloads/NeuroGame1.0.1.rar', Tamaño: "298MB" },
     { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar', Tamaño: "292MB" },
 ];
 
