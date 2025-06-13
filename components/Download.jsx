@@ -2,9 +2,10 @@
 import Image from "next/image";
 
 const Descargas = [
-    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.2", Dispositivo: "Windows", Fecha: "14/05/2025", Enlace: '/downloads/NeuroGame1.0.2.rar', Tamaño: "298MB" },
-    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.1", Dispositivo: "Windows", Fecha: "13/05/2025", Enlace: '/downloads/NeuroGame1.0.1.rar', Tamaño: "298MB" },
-    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar', Tamaño: "292MB" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame1.0.3.exe", Version: "1.0.3", Dispositivo: "Windows", Fecha: "12/06/2025", Enlace: '/downloads/NeuroGame1.0.3.rar', Tamaño: "300MB" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame1.0.2.exe", Version: "1.0.2", Dispositivo: "Windows", Fecha: "14/05/2025", Enlace: '/downloads/NeuroGame1.0.2.rar', Tamaño: "298MB" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame1.0.1.exe", Version: "1.0.1", Dispositivo: "Windows", Fecha: "13/05/2025", Enlace: '/downloads/NeuroGame1.0.1.rar', Tamaño: "298MB" },
+    { Logo: "/img/isotipo.svg", Nombre: "NeuroGame1.0.0.exe", Version: "1.0.0", Dispositivo: "Windows", Fecha: "04/04/2025", Enlace: '/downloads/NeuroGame1.0.0.rar', Tamaño: "292MB" },
 ];
 
 export default function Download() {

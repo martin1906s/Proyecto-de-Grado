@@ -3,20 +3,11 @@ import Image from "next/image";
 const integrantes = [
     {
         nombre: "Simbaña Martín",
-        rol: "Creador del videojuego y página web",
+        rol: "Líder y Desarrollador del Proyecto",	
         link: "https://martinsimbana.vercel.app/",
         img: "/img/colaboradores/dev.jpg"
     },
-    {
-        nombre: "Pasaco Damessis",
-        rol: "Líder del Proyecto",
-        img: "/img/colaboradores/anonimo.jpg"
-    },
-    {
-        nombre: "Espín Sebastian",
-        rol: "Creador de la idea del videojuego",
-        img: "/img/colaboradores/anonimo.jpg"
-    }
+    
 ];
 
 export default function About() {
